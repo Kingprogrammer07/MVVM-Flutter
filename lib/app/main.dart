@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:networking/di/di_setup.dart';
 import 'package:networking/domain/view_model.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: "my_secrets.env");
+  setupDI();
   runApp(const MyApp());
 }
 
@@ -28,7 +30,7 @@ class AlbumScreen extends StatefulWidget {
 }
 
 class _AlbumScreenState extends State<AlbumScreen> {
-  final AlbumViewModel _viewModel = AlbumViewModel();
+  final AlbumViewModel _viewModel = getIt<AlbumViewModel>();
 
   @override
   void initState() {

@@ -3,7 +3,8 @@ import 'package:networking/data/models/album_model.dart';
 import 'package:networking/domain/repo/album_repo.dart';
 
 class AlbumViewModel extends ChangeNotifier {
-  final AlbumRepository _repository = AlbumRepository();
+  final AlbumRepository _albumRepository;
+  AlbumViewModel(this._albumRepository);
 
   Album? _album;
   bool _isLoading = false;
@@ -19,7 +20,7 @@ class AlbumViewModel extends ChangeNotifier {
     notifyListeners();
 
     try {
-      _album = await _repository.getAlbum();
+      _album = await _albumRepository.getAlbum();
     } catch (e) {
       _errorMessage = e.toString();
     } finally {
