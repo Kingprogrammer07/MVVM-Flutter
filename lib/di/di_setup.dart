@@ -1,7 +1,7 @@
 import 'package:get_it/get_it.dart';
 import 'package:networking/data/services/album_service.dart';
 import 'package:networking/domain/repo/album_repo.dart';
-import 'package:networking/domain/view_model.dart';
+import 'package:networking/app/view_models/view_model.dart';
 
 final getIt = GetIt.instance;
 

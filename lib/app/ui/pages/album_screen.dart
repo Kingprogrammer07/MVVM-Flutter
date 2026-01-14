@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:networking/di/di_setup.dart';
-import 'package:networking/domain/view_model.dart';
+import 'package:networking/app/view_models/view_model.dart';
 
 class AlbumScreen extends StatefulWidget {
   const AlbumScreen({super.key});
